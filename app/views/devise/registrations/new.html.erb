@@ -1,7 +1,21 @@
 <h2>Sign up</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= form_with model: @user, url: user_registration_path do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
+
+  <!-- 名前 -->
+  <div class="field">
+   <%= f.label :name %><br>
+   <%= f.text_field :name %>
+  </div>
+
+  <!-- 学部 -->
+  <%= f.label :学部 %><br>
+  <%= f.select :faculty, [["神学部", "神学部"], ["文学部", "文学部"], ["社会学部", "社会学部"], ["法学部", "法学部"], ["経済学部", "経済学部"],
+                          ["商学部", "商学部"], ["人間福祉学部", "人間福祉学部"], ["国際学部", "国際学部"], ["教育学部", "教育学部"],
+                          ["総合政策学部", "総合政策学部"], ["理学部", "理学部"], ["工学部", "工学部"], ["生命環境学部", "生命環境学部"],
+                          ["建築学部", "建築学部"], ["理工学部", "理工学部"]], include_blank: "選択して下さい" %>
+
 
   <div class="field">
     <%= f.label :email %><br />

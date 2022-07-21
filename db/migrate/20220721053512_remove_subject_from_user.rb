@@ -1,0 +1,5 @@
+class RemoveSubjectFromUser < ActiveRecord::Migration[6.1]
+  def change
+    remove_column :users, :subject, :string
+  end
+end
