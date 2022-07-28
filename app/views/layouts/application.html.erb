@@ -21,8 +21,8 @@
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
         <% if user_signed_in? %>
           <li><%= link_to "Home", root_path, class: "nav-link px-2 text-light" %></li>
-          <li><%= link_to "Listing", root_path, class: "nav-link px-2 text-light" %></li>
-          <li><%= link_to "Books", root_path, class: "nav-link px-2 text-light" %></li>
+          <li><%= link_to "Listing", new_book_path, class: "nav-link px-2 text-light" %></li>
+          <li><%= link_to "Books", books_path, class: "nav-link px-2 text-light" %></li>
           <li><%= link_to "Users", users_path, class: "nav-link px-2 text-light" %></li>
           <li><%= link_to "Favorites", root_path, class: "nav-link px-2 text-light" %></li>
         <% else %>
