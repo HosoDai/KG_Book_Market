@@ -3,7 +3,7 @@
 
 <h1>My Page</h1>
 
-<%= image_tag @user.get_profile_image(100, 100) %>
+<%= image_tag @user.get_profile_image(100, 100), class: "rounded-circle border border-5" %>
 <%= @user.name %>
 <%= @user.faculty %>
 
