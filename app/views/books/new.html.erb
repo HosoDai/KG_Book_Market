@@ -1,11 +1,21 @@
-<h1>Books#new</h1>
-<p>Find me in app/views/books/new.html.erb</p>
+<div class="container text-center shadow p-3 mb-5 bg-white rounded">
+  <div class="card-container">
+    <div class="card-body">
+      <%= form_with model: @new_book, method: :post do |f| %>
+      <h3 class="card-title text-center mb-4 mt-1">新規投稿</h3>
+      <hr>
 
-<%= form_with model: @new_book, method: :post do |f| %>
-  <h4>Book Title<h4>
-  <%= f.text_field :title %>
-  <br>
+      <!-- 本のタイトル -->
+      <div class="form-group">
+        <%= f.label :book_title %><br>
+        <%= f.text_field :title %>
+      </div>
 
-  <%= f.submit "投稿" %>
-  
-<% end %>
+      <div class="form-group">
+         <%= f.submit "投稿" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
