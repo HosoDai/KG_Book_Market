@@ -1,55 +1,52 @@
-
-
-    <%= form_with model: @user, url: user_registration_path do |f| %> 
-    <%= render "devise/shared/error_messages", resource: resource %>
-
-    <div class="container text-center shadow p-3 mb-5 bg-white rounded">
-      <div class="card-container">
-        <div class="card-body">
-          <h3 class="card-title text-center mb-4 mt-1">Sign up</h3>
-          <hr>
-             <!-- 名前 -->
-          <div class="form-group">
-          <%= f.label :name %><br>
-          <%= f.text_field :name %>
-          </div>
-
-          <!-- 学部 -->
-          <div class="form-group">
-          <%= f.label :学部 %><br>
-          <%= f.select :faculty, [["神学部", "神学部"], ["文学部", "文学部"], ["社会学部", "社会学部"], ["法学部", "法学部"], ["経済学部", "経済学部"],
-                                  ["商学部", "商学部"], ["人間福祉学部", "人間福祉学部"], ["国際学部", "国際学部"], ["教育学部", "教育学部"],
-                                  ["総合政策学部", "総合政策学部"], ["理学部", "理学部"], ["工学部", "工学部"], ["生命環境学部", "生命環境学部"],
-                                  ["建築学部", "建築学部"], ["理工学部", "理工学部"]], include_blank: "選択して下さい" %>
-          </div>
-
-
-          <div class="form-group">
-            <%= f.label :email %><br />
-            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-          </div>
-
-          <div class="form-group">
-            <%= f.label :password %>
-            <% if @minimum_password_length %>
-            <em>(<%= @minimum_password_length %> characters minimum)</em>
-            <% end %><br />
-            <%= f.password_field :password, autocomplete: "new-password" %>
-          </div>
-
-          <div class="form-group">
-            <%= f.label :password_confirmation %><br />
-            <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-          </div>
-
-          <div class="form-group">
-            <%= f.submit "Sign up" %>
-          </div>
-          <% end %>
-
-          <%= render "devise/shared/links" %>
-        </div>
+<div class="container text-center shadow p-3 mb-5 bg-white rounded">
+  <div class="card-container">
+    <div class="card-body">
+      <%= form_with model: @user, url: user_registration_path do |f| %> 
+      <%= render "devise/shared/error_messages", resource: resource %>
+      <h3 class="card-title text-center mb-4 mt-1">Sign up</h3>
+      <hr>
+          <!-- 名前 -->
+      <div class="form-group">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
       </div>
+
+      <!-- 学部 -->
+      <div class="form-group">
+      <%= f.label :学部 %><br>
+      <%= f.select :faculty, [["神学部", "神学部"], ["文学部", "文学部"], ["社会学部", "社会学部"], ["法学部", "法学部"], ["経済学部", "経済学部"],
+                              ["商学部", "商学部"], ["人間福祉学部", "人間福祉学部"], ["国際学部", "国際学部"], ["教育学部", "教育学部"],
+                              ["総合政策学部", "総合政策学部"], ["理学部", "理学部"], ["工学部", "工学部"], ["生命環境学部", "生命環境学部"],
+                              ["建築学部", "建築学部"], ["理工学部", "理工学部"]], include_blank: "選択して下さい" %>
+      </div>
+
+
+      <div class="form-group">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "new-password" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.submit "Sign up" %>
+      </div>
+      <% end %>
+
+      <%= render "devise/shared/links" %>
     </div>
+  </div>
+</div>
 
 
