@@ -1,9 +1,21 @@
-<h1>本編集</h1>
+<div class="container text-center shadow p-3 mb-5 bg-white rounded">
+  <div class="card-container">
+    <div class="card-body">
+      <%= form_with model: @book do |f| %>
+      <h3 class="card-title text-center mb-4 mt-1">書名編集</h3>
+      <hr>
 
-<%= form_with model: @book do |f| %>
-  <p>BookTitle</p>
-  <%= f.text_field :title, autofocus: true, id: "inputBookTitle", placeholder: "本のタイトル" %>
-  <br>
+      <!-- 本のタイトル　-->
+      <div class="form-group">
+        <%= f.label :book_title %><br>
+        <%= f.text_field :title, autofocus: true, id: "inputBookTitle", placeholder: "本のタイトル" %>
+      </div>
 
-  <%= f.submit "変更を保存" %>
-<% end %>
+      <div class="form-group">
+        <%= f.submit "変更を保存" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
