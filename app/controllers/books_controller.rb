@@ -29,11 +29,17 @@ class BooksController < ApplicationController
     redirect_to book_path(@book)
   end
 
+  def destroy
+    @book = Book.find(params[:id])
+    @book.destroy
+    redirect_to books_path
+  end
+
   # ストロングパラメータ
 
   private
 
   def book_params
-    params.require(:book).permit(:title)
+    params.require(:book).permit(:title, :image)
   end
 end

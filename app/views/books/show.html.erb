@@ -1,2 +1,26 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<div class="card-list-container py-5">
+  <div class="card w-50 mx-auto mt-4 shadow-lg">
+    <%= image_tag @book.get_book_image, class: "card-img-top" %>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-2">
+          <%= image_tag @book.user.get_profile_image(100, 100), class: "mt-3 rounded-circle" %>
+        </div>
+        <div class="col-10">
+          <p class="card-title">
+            <strong><i class="far fa-flag"></i><span><%= @book.title %></span></strong>
+          </p>
+          <span><i class="fas fa-user"></i>By <%= @book.user.name %></span><br>
+          <% if @book.user == current_user %>
+            <%= link_to edit_book_path(@book) do %>
+              <button type="button" class="btn btn-secondary">Edit</button>
+            <% end %>
+            <%= link_to book_path(@book), method: :delete, "data-confirm" => "本当に削除しますか？" do %>
+              <button type="button" class="btn btn-danger">Destroy</button>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
