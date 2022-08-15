@@ -1,8 +1,11 @@
-<%= render "errors/user_error_message", user: @user %>
+<div class="error-filed bg-danger text-white">
+  <%= render "errors/user_error_message", user: @user %>
+</div>
 <div class="container text-center shadow p-3 mb-5 bg-white rounded">
   <div class="card-container">
     <div class="card-body">
       <%= form_with model: @user do |f| %>
+
       <h3 class="card-title text-center mb-4 mt-1">ユーザー編集</h3>
       <hr>
 

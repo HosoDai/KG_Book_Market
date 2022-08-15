@@ -12,5 +12,5 @@ ja:
         book:
           attributes:
             image:
-              format: "%{attribute}"
-              blank: を選択してください。
+              format: "%{attribute}%{message}"
+              blank: を選択してください
