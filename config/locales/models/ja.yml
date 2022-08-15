@@ -4,6 +4,9 @@ ja:
       book:
         title: 書名
         image: 本の写真
+      user:
+        name: 名前
+        faculty: 学部
     errors:
       models:
         book:
