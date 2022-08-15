@@ -1,0 +1,13 @@
+ja:
+  activerecord:
+    attributes:
+      book:
+        title: 書名
+        image: 本の写真
+    errors:
+      models:
+        book:
+          attributes:
+            image:
+              format: "%{attribute}"
+              blank: を選択してください。
