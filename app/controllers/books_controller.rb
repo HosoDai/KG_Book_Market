@@ -16,6 +16,7 @@ class BooksController < ApplicationController
     @new_book = Book.new(book_params)
     @new_book.user_id = current_user.id
     if @new_book.save
+      flash[:notice] = "本の投稿に成功しました。"
       redirect_to books_path
     else
       render :new
