@@ -32,6 +32,7 @@ class BooksController < ApplicationController
   def update
     @book = Book.find(params[:id])
     if @book.update(book_params)
+      flash[:notice] = "本の更新に成功しました。"
       redirect_to book_path(@book)
     else
       @user = @book.user
