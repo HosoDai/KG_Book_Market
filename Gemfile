@@ -63,3 +63,5 @@ gem "net-smtp"
 gem "image_processing", "~> 1.2"
 
 gem "rails-i18n"
+
+gem 'jquery-rails'
